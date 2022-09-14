@@ -10,7 +10,7 @@ export default {
         title: ["Righteous", "Dosis", "sans-serif"],
       },
       gridTemplateColumns: {
-        keys: "1fr 1fr 64px",
+        keys: "1fr 64px",
       },
     },
   },

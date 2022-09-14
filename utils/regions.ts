@@ -1,4 +1,4 @@
-import { Region } from "../ts/types.ts";
+import { Region } from "@/ts/types.ts";
 
 export const REGIONS: Region[] = [
   {

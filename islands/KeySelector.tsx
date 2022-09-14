@@ -65,18 +65,20 @@ const KeySelector: FunctionComponent = () => {
         {keys.map(({ key, customKey }) => {
           return (
             <div
-              className="grid grid-cols-keys items-center gap-x-2 my-2 px-4 py-1 rounded-xl transition duration-150 hover:bg-gray-50"
+              className="grid grid-cols-keys items-end gap-x-2 my-2 px-4 py-1 rounded-xl transition duration-150 hover:bg-gray-50"
               onMouseOver={() => sHover.value = key}
               onMouseLeave={() => sHover.value = undefined}
             >
-              <span className="font-mono">{key}</span>
-              <TextInput
-                type="text"
-                value={customKey || ""}
-                placeholder={key}
-                onInput={({ currentTarget: { value } }) =>
-                  updateCustomValue(key, value)}
-              />
+              <div className="flex flex-col space-y-1">
+                <span className="font-mono text-sm font-bold ml-1">{key}</span>
+                <TextInput
+                  type="text"
+                  value={customKey || ""}
+                  placeholder={key}
+                  onInput={({ currentTarget: { value } }) =>
+                    updateCustomValue(key, value)}
+                />
+              </div>
               <div className="mx-auto">
                 <button type="button" onClick={() => handleRemoveKey(key)}>
                   <Trash className="w-6 h-6 transition duration-150 hover:text-red-500" />
